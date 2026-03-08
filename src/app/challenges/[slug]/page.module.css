@@ -1,0 +1,39 @@
+.page {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-6) var(--space-16);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--color-border);
+}
+
+.sectionTitle {
+  font-size: var(--text-xl);
+  font-weight: 700;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  transition: color 0.15s ease;
+}
+
+.backLink:hover {
+  color: var(--color-text);
+}
+
+.errorMessage {
+  font-size: var(--text-base);
+  color: var(--color-error);
+  padding: var(--space-4);
+  background-color: color-mix(in srgb, var(--color-error) 8%, transparent);
+  border-radius: var(--radius-md);
+}
