@@ -1,0 +1,29 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-3);
+  border-radius: 9999px;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.beginner {
+  background-color: color-mix(in srgb, var(--color-beginner) 15%, transparent);
+  color: var(--color-beginner);
+}
+
+.intermediate {
+  background-color: color-mix(in srgb, var(--color-intermediate) 15%, transparent);
+  color: var(--color-intermediate);
+}
+
+.advanced {
+  background-color: color-mix(in srgb, var(--color-advanced) 15%, transparent);
+  color: var(--color-advanced);
+}
+
+.category {
+  background-color: color-mix(in srgb, var(--color-primary) 10%, transparent);
+  color: var(--color-primary);
+}
