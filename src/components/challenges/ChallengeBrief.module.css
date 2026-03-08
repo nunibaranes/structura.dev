@@ -1,0 +1,55 @@
+.brief {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.badges {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.title {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+}
+
+.description {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.constraintsTitle {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+}
+
+.constraintsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.constraint {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  padding-left: var(--space-4);
+  position: relative;
+}
+
+.constraint::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--color-text-muted);
+}
