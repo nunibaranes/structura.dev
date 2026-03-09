@@ -47,10 +47,11 @@ export interface LearningMaterial {
 
 export interface AIFeedback {
   challengeSlug: string;
+  summary: string;
   strengths: string[];
-  probingQuestions: string[];
-  missedConcepts: string[];
-  suggestions: string[];
-  overallAssessment: string;
+  gapsAndRisks: string[];
+  tradeoffs: string[];
+  nextStep: string;
+  reflectionQuestion: string;
   evaluatedAt: string;
 }

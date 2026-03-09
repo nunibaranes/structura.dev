@@ -8,19 +8,29 @@ interface FeedbackViewProps {
 export function FeedbackView({ feedback }: FeedbackViewProps) {
   return (
     <div className={styles.feedback}>
-      <FeedbackSection title="Strengths" items={feedback.strengths} itemStyle={styles.strengthItem} />
-      <FeedbackSection title="Probing Questions" items={feedback.probingQuestions} itemStyle={styles.questionItem} />
-      <FeedbackSection title="Missed Concepts" items={feedback.missedConcepts} itemStyle={styles.missedItem} />
-      <FeedbackSection title="Suggestions" items={feedback.suggestions} itemStyle={styles.suggestionItem} />
       <div className={styles.section}>
-        <h3 className={styles.sectionTitle}>Overall Assessment</h3>
-        <p className={styles.overall}>{feedback.overallAssessment}</p>
+        <h3 className={styles.sectionTitle}>Summary</h3>
+        <p className={styles.summary}>{feedback.summary}</p>
+      </div>
+
+      <FeedbackList title="Strengths" items={feedback.strengths} itemStyle={styles.strengthItem} />
+      <FeedbackList title="Gaps & Risks" items={feedback.gapsAndRisks} itemStyle={styles.gapItem} />
+      <FeedbackList title="Tradeoffs to Consider" items={feedback.tradeoffs} itemStyle={styles.tradeoffItem} />
+
+      <div className={styles.section}>
+        <h3 className={styles.sectionTitle}>Next Step</h3>
+        <p className={styles.nextStep}>{feedback.nextStep}</p>
+      </div>
+
+      <div className={styles.section}>
+        <h3 className={styles.sectionTitle}>Reflection Question</h3>
+        <p className={styles.reflection}>{feedback.reflectionQuestion}</p>
       </div>
     </div>
   );
 }
 
-function FeedbackSection({
+function FeedbackList({
   title,
   items,
   itemStyle,
