@@ -2,23 +2,23 @@ import type { Challenge } from '@/types/challenge';
 
 export const challenge: Challenge = {
   slug: 'design-api-gateway',
-  title: 'Design an API Gateway',
+  title: 'API Gateway Design',
   description:
-    'Your company has 12 microservices, each with its own REST API. The frontend team is frustrated — they need to call 4-5 services per page and handle authentication, rate limiting, and error handling differently for each one. Design an API gateway that provides a unified interface for the frontend while keeping the backend services decoupled.',
-  category: 'api-design',
-  difficulty: 'advanced',
+    'Your company runs 6 microservices behind a single load balancer. Mobile and web clients make direct calls to individual services. Authentication is duplicated across services, there\'s no rate limiting, and a single slow service causes cascading timeouts. Design an API gateway layer that centralizes cross-cutting concerns while keeping backend services decoupled.',
+  category: 'system-design',
+  difficulty: 'intermediate',
   constraints: [
-    'The gateway must not become a bottleneck — current peak is 5K requests/sec',
+    'The gateway must not become a single point of failure or a performance bottleneck',
     'Backend teams must be able to deploy their services independently',
-    'The frontend needs a single authentication flow',
-    'Some endpoints require real-time data, others can be cached aggressively',
+    'Mobile clients need aggregated responses — one request per screen, not five',
+    'A failing downstream service must not cascade failures to other services',
   ],
   evaluationHints: [
-    'Should address request routing and service discovery',
-    'Should consider authentication/authorization at the gateway level',
-    'Should mention rate limiting and circuit breaker patterns',
-    'Should address response aggregation (BFF pattern) vs simple proxying',
-    'Should consider how to handle partial failures when aggregating',
+    'Should centralize authentication/authorization at the gateway level',
+    'Should address rate limiting and circuit breaker patterns',
+    'Should address request aggregation (BFF pattern) for mobile clients',
+    'Should ensure the gateway doesn\'t become a monolithic bottleneck with business logic',
+    'Should consider how to handle partial failures when aggregating responses',
   ],
-  concepts: ['api-gateway', 'microservices', 'authentication', 'rate-limiting'],
+  concepts: ['api-gateway', 'circuit-breaker', 'bff-pattern', 'rate-limiting'],
 };
